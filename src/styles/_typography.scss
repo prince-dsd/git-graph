@@ -1,0 +1,75 @@
+:root {
+    --primary-font-family: 'Lato', system, -apple-system, 'BlinkMacSystemFont', 'Roboto', 'Segoe UI',
+        'Arial', sans-serif;
+    --mono-font-family: 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', 'JetBrainsMono',
+        'Consolas', monospace;
+    --default-font-size: 1.6rem;
+}
+
+body {
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    font-size: var(--default-font-size);
+    line-height: 1.7;
+    color: var(--color-white-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--color-link);
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato/Lato-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Lato/Lato-Regular.woff') format('woff'),
+        url('../assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato/Lato-Light.woff2') format('woff2'),
+        url('../assets/fonts/Lato/Lato-Light.woff') format('woff'),
+        url('../assets/fonts/Lato/Lato-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato/Lato-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Lato/Lato-Bold.woff') format('woff'),
+        url('../assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('../assets/fonts/FiraCode/FiraCode-Regular.woff2') format('woff2'),
+        url('../assets/fonts/FiraCode/FiraCode-Regular.woff') format('woff'),
+        url('../assets/fonts/FiraCode/FiraCode-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('../assets/fonts/FiraCode/FiraCode-Medium.woff2') format('woff2'),
+        url('../assets/fonts/FiraCode/FiraCode-Medium.woff') format('woff'),
+        url('../assets/fonts/FiraCode/FiraCode-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

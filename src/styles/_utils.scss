@@ -1,0 +1,25 @@
+:root {
+    // SHADOWS
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 2rem 5rem rgba(0, 0, 0, 0.12);
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+    --shadow-card: 0 1rem 3rem -1.5rem rgba(0, 0, 0, 0.2);
+    --shadow-card-active: 0 1.2rem 3rem -1.4rem rgba(0, 0, 0, 0.2);
+
+    // DIVIDER
+    --line-light: 1px solid var(--color-white-alternate);
+    --dashed-line-light: 2px dashed var(--color-white-alternate);
+
+    // ANIMATIONS
+    --transition: all 0.3s ease;
+
+    // BORDER-RADIUS
+    --border-radius: 10px;
+
+    // GRID
+    --grid-width: calc(130rem - (var(--number-of-columns) - 1) * var(--grid-gap));
+    --number-of-columns: 16;
+    --grid-gap: 2rem;
+    --grid-gap-mobile: 1.5rem;
+}
