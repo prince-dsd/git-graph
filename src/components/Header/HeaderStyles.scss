@@ -1,0 +1,136 @@
+@import '../../styles/media-queries';
+
+.header {
+    --width: 5rem;
+    --width-mobile: 4.5rem;
+    --expanded-width: 30rem;
+
+    @include mediaQuery(bp-800) {
+        --expanded-width: 28rem;
+    }
+    @include mediaQuery(bp-420) {
+        --expanded-width: 26rem;
+    }
+
+    position: fixed;
+    top: 0;
+    width: min-content;
+    display: flex;
+    justify-content: left;
+    z-index: 3;
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1.5rem;
+        margin-top: 1rem;
+        height: var(--width);
+        width: var(--width);
+        color: var(--color-white);
+        background-color: var(--color-primary);
+        border-radius: 50px;
+        box-shadow: 0 0.5rem 2rem -1.2rem var(--color-primary);
+        border: 2px solid var(--color-primary);
+        font-size: 2rem;
+        outline: none;
+
+        @include mediaQuery(bp-800) {
+            height: var(--width-mobile);
+            width: var(--width-mobile);
+            font-size: 1.8rem;
+        }
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            background-color: var(--color-primary-dark);
+            border: 2px solid var(--color-primary-dark);
+            box-shadow: 0 0.5rem 2rem -1.2rem var(--color-primary-dark);
+        }
+    }
+
+    &__home {
+        margin-left: 1.5rem;
+    }
+
+    &__form {
+        &__search-container {
+            width: var(--expanded-width);
+        }
+
+        &__search-expand {
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+
+            svg {
+                position: absolute;
+                left: 1.3rem;
+
+                @include mediaQuery(bp-800) {
+                    left: 1.15rem;
+                }
+            }
+
+            &--active {
+                width: var(--expanded-width);
+                justify-content: space-between;
+                background-color: var(--color-primary-dark);
+                border: 2px solid var(--color-primary-dark);
+
+                &:hover,
+                &:focus {
+                    cursor: default;
+                }
+            }
+
+            &__input {
+                position: absolute;
+                top: 1.8rem;
+                background-color: rgba(0, 0, 0, 0);
+                font-family: var(--mono-font-family);
+                font-size: 2rem;
+                font-weight: 600;
+                color: var(--color-white);
+                margin-top: 2px;
+                margin-left: 4.2rem;
+                width: 0rem;
+                height: 3rem;
+                outline: none;
+                border: none;
+                opacity: 0;
+                transform: translateX(-1rem);
+                transition: var(--transition) 0.05s;
+
+                @include mediaQuery(bp-800) {
+                    top: 1.6rem;
+                    margin-left: 3.6rem;
+                    height: 2.8rem;
+                }
+
+                &::placeholder {
+                    font-family: var(--mono-font-family);
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    color: var(--color-white);
+                    opacity: 0;
+                }
+
+                &--active {
+                    opacity: 1;
+                    transform: translateX(1rem);
+                    width: 22rem;
+
+                    @include mediaQuery(bp-800) {
+                        width: 20rem;
+                    }
+
+                    &::placeholder {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    }
+}
