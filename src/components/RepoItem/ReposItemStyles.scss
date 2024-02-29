@@ -1,0 +1,90 @@
+@import '../../styles/media-queries';
+
+.repo-item {
+    padding: 1.8rem;
+    height: 22rem;
+    border-radius: 0.4rem;
+    box-shadow: var(--shadow-card);
+    font-size: 1.4rem;
+    background-color: var(--color-dark-light);
+    overflow: hidden;
+
+    display: grid;
+    grid-template-rows: min-content minmax(7rem, min-content) repeat(2, min-content);
+    grid-gap: 0.8rem;
+    align-content: space-between;
+    transition: all 0.2s;
+
+    @include mediaQuery(bp-600) {
+        grid-template-rows: min-content minmax(8rem, min-content) repeat(2, min-content);
+    }
+
+    &:hover,
+    &:focus {
+        transform: translateY(-0.5rem);
+        box-shadow: var(--shadow-card-active);
+    }
+
+    &__name {
+        display: flex;
+        align-items: center;
+        grid-row: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        font-family: var(--mono-font-family);
+
+        svg {
+            max-width: 16px;
+            margin-right: 0.8rem;
+        }
+    }
+
+    &__description {
+        color: var(--color-white-alternate);
+        grid-row: 2;
+    }
+
+    &__attributes {
+        display: flex;
+        flex-wrap: wrap;
+
+        svg {
+            max-width: 16px;
+            margin-right: 0.5rem;
+        }
+
+        & > * {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+
+        &--1 {
+            grid-row: 3;
+        }
+
+        &--2 {
+            grid-row: 4;
+        }
+
+        &__created_at {
+            margin-right: auto;
+        }
+
+        &__watching {
+            margin-right: auto;
+        }
+    }
+}
+
+.repo-github-url {
+    color: var(--color-white-main);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
